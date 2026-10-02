@@ -1,0 +1,13 @@
+male(ali).         male(ahmad).
+male(faisal).      male(hassan).
+male(muhammad).    male(khan).
+
+female(sara).      female(nora).
+
+parent(ali, ahmad).
+parent(ahmad, sara).
+parent(ahmad, khan).
+parent(faisal, hassan).
+parent(ali, muhammad).
+parent(ahmad, nora).
+parent(muhammad, faisal).

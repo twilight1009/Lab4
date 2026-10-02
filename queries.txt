@@ -1,0 +1,11 @@
+?- female(X).
+
+?- male(_).
+
+?- parent(GP, P), parent(P, faisal).
+
+?- parent(ahmad, Child), female(Child).
+
+?- parent(P, ahmad), parent(P, muhammad).
+
+?- parent(_, khan), parent(_, nora), male(khan), khan \= nora.
