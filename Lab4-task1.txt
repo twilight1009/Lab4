@@ -1,0 +1,42 @@
+?- house = house.
+true.
+why:Both terms are identical , so unification succeeds.
+
+?- house = abc.
+false.
+why:Two distinct constant atoms (house and abc) cannot unify.
+
+?- edge(a,b) = edge(C,b).
+C=a.
+why:Both terms have the same functor (edge/2); the second arguments match (b = b), and variable C unifies with atom a.
+
+?- edge(a,d) = edge(C,B).
+C=a,
+B=d.
+why:Same functor (edge/2); variable C unifies with a and variable B unifies with d.
+
+?- edge(C,B) = edge(a,d).
+C=a,
+B=d.
+why:Unification is symmetric; variable C unifies with a and B unifies with d.
+
+?- edge(A,f(g,h)) = edge(a, B).
+A=a,
+B=f(g,h).
+why:Same functor (edge/2); variable A unifies with a, and variable B unifies with the compound structure f(g,h).
+
+?- edge(A,A) = edge(b,c).
+false.
+why:The variable A cannot simultaneously unify with two distinct constants (b and c).
+
+?- edge(A,A) = edge(b,b).
+A=b.
+why:Both arguments on the right are identical (b), so variable A unifies with b.
+
+?- A=B, B=f.
+A=b, B=f.
+why:A and B alias together first. When B is bound to f, Prolog displays the binding chain A = B, B = f. to show A is linked to B.
+
+?- A=B, B=f, A=e.
+false.
+why:A and B are bound to atom f; attempting to subsequently unify A (f) with e fails because f and e are distinct constants.
